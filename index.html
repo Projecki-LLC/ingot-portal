@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>THE INGOT</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="preload" style="display:none"></div>
+
+<div id="status">
+	<span>
+		PLAY.THE-INGOT.NET
+		<b>LOADING</b>
+		<i>CLICK TO COPY</i>
+	</span>
+</div>
+
+<div id="logo"></div>
+<div id="icons">
+	<a class="store" href="https://discord.the-ingot.net"></a>
+	<a class="forum" href="https://store.the-ingot.net"></a>
+	<a class="vote" href="https://store.the-ingot.net/vote"></a>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+<script type="text/javascript">
+// (c) 2017 NIKOLOVDZN.COM
+$(function(){var t=["home","forum","store","vote"];$(t).each(function(){$("<img/>").attr("src","icons/"+this+".png").appendTo("#preload"),$("<img/>").attr("src","icons/"+this+"-hover.png").appendTo("#preload")}),$.getJSON("//mcapi.us/server/status?ip=play.the-ingot.net",function(t){1==t.online?$("#status b").html(t.players.now+" online"):$("#status b").html("Offline")})}),new Clipboard("#status span",{text:function(){return"play.the-ingot.net"}}).on("success",function(t){$(t.trigger).addClass("copied").find("i").html("Ready to Paste!"),setTimeout(function(){$(t.trigger).removeClass("copied").find("i").html("Click to Copy")},5e3)});
+</script>
+
+</body>
+</html>
